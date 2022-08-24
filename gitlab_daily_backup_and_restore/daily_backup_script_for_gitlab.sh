@@ -6,7 +6,7 @@
 
 # Assign the variables.
 USER='root';
-REMOTE_HOST='172.16.4.62';
+REMOTE_HOST='172.16.4.99';
 METADATA_LOCAL_PATH='/var/opt/gitlab/backups/';
 METADATA_REMOTE_PATH='/var/opt/gitlab/backups/';
 CORE_DATA_LOCAL_PATH='/etc/gitlab/';
