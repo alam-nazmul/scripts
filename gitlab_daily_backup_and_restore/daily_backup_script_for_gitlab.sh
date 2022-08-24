@@ -28,7 +28,7 @@ gitlab-backup create force=yes
 cd ${METADATA_LOCAL_PATH};
 RECENT=$(ls -Art | tail -n 1);
 echo "${RECENT} , this is the most recent file"
-Printf "\033[1;96m2. %-30s : ${RECENT}\n" "GitLab metadata file name" | tee -a "${LOG_FILE}"
+printf "\033[1;96m2. %-30s : ${RECENT}\n" "GitLab metadata file name" | tee -a "${LOG_FILE}"
 sleep 3s
 
 printf "\033[1;96m3. %-30s : ${RECENT}\n" "Backing activity done" | tee -a "${LOG_FILE}"
