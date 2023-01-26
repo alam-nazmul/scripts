@@ -1,0 +1,17 @@
+---
+- import_playbook: start.yaml
+- import_playbook: sleep.yaml
+- import_playbook: update_pkg.yaml
+- import_playbook: sleep2.yaml
+- import_playbook: upgrade_pkg.yaml
+- import_playbook: on_demand_reboot.yaml
+- import_playbook: sleep.yaml
+- import_playbook: mist_pkg.yaml
+- import_playbook: postgresql.yaml
+- import_playbook: redis.yaml
+- import_playbook: docker.yaml
+- import_playbook: java8.yaml
+- import_playbook: java17.yaml
+- import_playbook: nginx.yaml
+- import_playbook: vault.yaml
+- import_playbook: ufw.yaml

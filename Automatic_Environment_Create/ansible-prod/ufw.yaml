@@ -1,0 +1,33 @@
+---
+- name: UFW configuration
+  hosts: vms
+  become: yes
+  vars_files: vars.yaml
+  tasks:
+          - name: Allow tcp ports on UFW
+            ufw:
+              rule: allow
+              port: '{{ item }}'
+              proto: tcp
+            loop:
+              "{{ UFW_ports_list }}"
+
+          - name: Allow udp ports on UFW
+            ufw:
+              rule: allow
+              port: '{{ item }}'
+              proto: udp
+            loop:
+              "{{ UFW_ports_list }}"
+
+          - name: Enable UFW
+            ufw:
+              state: enabled
+
+          - name: Reload UFW service
+            ufw:
+              state: reloaded
+
+
+## We will add port description later ##
+## We will add update UFW as per Services wise ##

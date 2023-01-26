@@ -1,0 +1,8 @@
+---
+- name: Packages update
+  hosts: vms
+  become: yes
+  tasks:
+          - name: Update the packages
+            apt:
+              update_cache: yes

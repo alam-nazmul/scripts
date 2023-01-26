@@ -1,0 +1,10 @@
+---
+- name: Starts the VMs
+  hosts: prox
+  become_user: nazmul
+  tasks:
+          - name: Wait for starts all vms
+            pause:
+              seconds: 300
+              prompt: "Please wait for five minutes for onboard all vms"
+              echo: yes

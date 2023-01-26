@@ -1,0 +1,15 @@
+---
+- name: Starts the VMs
+  hosts: prox
+  become_user: nazmul
+  vars_files: vars.yaml
+  tasks:
+          - name: Start VMs from the list of VMs
+            proxmox_kvm:
+              api_host: pve
+              api_user: terraform@pve
+              api_password: terr@F0rm
+              vmid: '{{ item }}'
+              state: started
+            loop:
+              "{{ vms_id }}"

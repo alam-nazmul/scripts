@@ -1,0 +1,41 @@
+[vms:children]
+sql
+redis
+java17
+docker
+nginx
+java8
+vault
+
+[prox]
+test_prod_0     ansible_host=172.16.7.41        ansible_user=nazmul     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[sql]
+test_prod1      ansible_host=172.16.7.201       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod9      ansible_host=172.16.7.209       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[redis]
+test_prod1      ansible_host=172.16.7.201       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod9      ansible_host=172.16.7.209       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[java17]
+test_prod2      ansible_host=172.16.7.202       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod3      ansible_host=172.16.7.203       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod4      ansible_host=172.16.7.204       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod8      ansible_host=172.16.7.208       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[docker]
+test_prod4      ansible_host=172.16.7.204       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod8      ansible_host=172.16.7.208       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[nginx]
+test_prod5      ansible_host=172.16.7.205       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod7      ansible_host=172.16.7.207       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod8      ansible_host=172.16.7.208       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[java8]
+test_prod6      ansible_host=172.16.7.206       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+test_prod7      ansible_host=172.16.7.207       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"
+
+[vault]
+test_prod7      ansible_host=172.16.7.207       ansible_user=ubuntu     ansible_ssh_extra_args="-o StrictHostKeyChecking=no"

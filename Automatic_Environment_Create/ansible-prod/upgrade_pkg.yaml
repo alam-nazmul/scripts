@@ -1,0 +1,13 @@
+---
+- name: packages upgrade
+  hosts: vms
+  become: yes
+  tasks:
+          - name: Package upgrade
+            apt:
+              upgrade: dist
+              force_apt_get: true
+              
+          - name: Auto remove unnecessary dependency pkgs
+            apt:
+              autoremove: yes

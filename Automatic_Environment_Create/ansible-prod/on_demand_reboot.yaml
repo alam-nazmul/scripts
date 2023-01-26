@@ -1,0 +1,17 @@
+---
+- name: Reboot the vms
+  hosts: vms
+  become: true
+  tasks:
+        - name: Check if reboot needed
+          stat:
+            path: /var/run/reboot-required
+            get_checksum: false
+          register: reboot_required_file
+        - name: Reboot if needed
+          reboot:
+            connect_timeout: 5
+            reboot_timeout: 300
+            pre_reboot_delay: 0
+            post_reboot_delay: 30
+          when: reboot_required_file.stat.exists

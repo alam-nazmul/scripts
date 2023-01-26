@@ -1,0 +1,10 @@
+---
+- name: Starts the VMs
+  hosts: prox
+  become_user: nazmul
+  tasks:
+          - name: Waiting for update packages on all vms
+            pause:
+              minutes: 15
+              prompt: "Please wait for Fifteen minutes for complete the update pkgs of all vms"
+              echo: yes
