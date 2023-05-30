@@ -1,0 +1,9 @@
+---
+- name: Remove the main files for packages
+  hosts: prod
+  become: true
+  tasks:
+    - name: Remove the directory
+      file:
+        path: /home/ubuntu/ib_prod/
+        state: absent

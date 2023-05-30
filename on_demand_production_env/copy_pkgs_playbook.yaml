@@ -1,0 +1,9 @@
+---
+- name: Sent the required packages from local workstaion to targeted hosts
+  hosts: prod
+  tasks:
+    - name: Copy main files of filebeat, java, nfs, traceroute
+      copy:
+        src: /home/nazmul/ib_prod/pkgs
+        dest: /home/ubuntu/ib_prod/
+        mode: "0777"

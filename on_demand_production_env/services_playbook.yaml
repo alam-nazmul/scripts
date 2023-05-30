@@ -1,0 +1,26 @@
+---
+- name: Enable and Start the installed packages
+  hosts: prod
+  become: yes
+  tasks:
+    - name: Enable and Start filebeat service
+      service:
+        name: filebeat.service
+        enabled: yes
+        state: restarted
+
+    #- name: Enable and Start NFS server service
+    #  service:
+    #    name:  nfs-kernel-server
+    #    enabled: yes
+    #    state: started
+
+    - name: To bypass the unit nfs-common.service is masked.
+      shell:
+        cmd: rm /lib/systemd/system/nfs-common.service; systemctl daemon-reload
+
+    - name: Enable and Start NFS-common service
+      service:
+        name: nfs-common.service
+        enabled: yes
+        state: restarted

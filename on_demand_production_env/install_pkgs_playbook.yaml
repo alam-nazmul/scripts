@@ -1,0 +1,24 @@
+---
+- name: Install required packages
+  hosts: prod
+  become: true
+  tasks:
+    - name: Change the targeted Filebeat directory and install the package
+      shell:
+        chdir: /home/ubuntu/ib_prod/pkgs/filebeat
+        cmd: dpkg --install --force-all *.deb
+
+    - name: Change the targeted Java-17 directory and install the package
+      shell:
+        chdir: /home/ubuntu/ib_prod/pkgs/java
+        cmd: dpkg --install --force-all *.deb
+
+    - name: Change the targeted NFS directory and install the package
+      shell:
+        chdir: /home/ubuntu/ib_prod/pkgs/nfs_client
+        cmd: dpkg --install --force-all *.deb
+
+    - name: Change the targeted traceroute directory and install the package
+      shell:
+        chdir: /home/ubuntu/ib_prod/pkgs/traceroute
+        cmd: dpkg --install --force-all *.deb

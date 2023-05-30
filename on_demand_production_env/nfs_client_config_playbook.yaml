@@ -1,0 +1,18 @@
+---
+- name: Install required packages
+  hosts: prod
+  become: true
+  tasks:
+    - name: modify
+      lineinfile:
+        path: /etc/fstab
+        line: '192.168.190.30:/var/log/ib /var/log/ib nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0'
+        create: yes
+
+    - name: create NFS directory
+      file:
+        path: /var/log/ib
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: '0755'

@@ -1,0 +1,10 @@
+---
+- name: Modify ssh config file that the instances are accesible by "root" user
+  hosts: prod
+  become: yes
+  tasks:
+    - name: modify
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        search_string: 'PermitRootLogin prohibit-password'
+        line: 'PermitRootLogin yes'
