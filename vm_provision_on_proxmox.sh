@@ -20,3 +20,4 @@ qm clone $source_temp_id $instance_id --name $new_vm_name --full --format $insta
 qm set $instance_id --core $cores --memory $ram --sockets $sockets
 qm set $instance_id --ipconfig0 ip=${ip}/${subnet},gw=$gateway
 qm resize $instance_id scsi0 ${disk_size}G
+qm start $instance_id
